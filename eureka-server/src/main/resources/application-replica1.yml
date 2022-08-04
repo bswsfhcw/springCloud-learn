@@ -1,0 +1,13 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: eureka-server-8001
+eureka:
+  instance:
+    hostname: replica1
+  client:
+    serviceUrl:
+      defaultZone: http://replica2:8002/eureka/,http://replica3:8003/eureka/ #注册到另一个Eureka注册中心
+    fetch-registry: true
+    register-with-eureka: true

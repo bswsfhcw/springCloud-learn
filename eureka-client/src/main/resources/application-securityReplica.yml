@@ -1,0 +1,11 @@
+server:
+  port: 8101
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://macro1:1234561@replica1:8001/eureka/,http://macro2:1234562@replica2:8002/eureka/,http://macro3:1234563@replica3:8003/eureka/

@@ -1,0 +1,17 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: eureka-security-server-8001
+  security: #配置SpringSecurity登录用户名和密码
+    user:
+      name: macro1
+      password: 1234561
+eureka:
+  instance:
+    hostname: replica1
+  client:
+    serviceUrl:
+      defaultZone: http://macro2:1234562@replica2:8002/eureka/,http://macro3:1234563@replica3:8003/eureka/ #注册到另一个Eureka注册中心
+    fetch-registry: true
+    register-with-eureka: true
